@@ -9,6 +9,7 @@ Tool test benchmark for [redis-cluster](https://redis.io/topics/cluster-tutorial
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker-machine](https://github.com/docker/machine)
 - [redis](https://redis.io/download)
+- [virtualBox](https://www.virtualbox.org/)
 
 ## Setup 
 
