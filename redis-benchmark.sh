@@ -40,8 +40,18 @@ cd ..
 # go to the directory src 
 cd redis-6.0.6/src/
 
+# create cluster 
+./redis-cli --cluster create \
+$(docker-machine ip redis-cluster-1):6379 \
+$(docker-machine ip redis-cluster-2):6379 \
+$(docker-machine ip redis-cluster-3):6379 \
+$(docker-machine ip redis-cluster-4):6379 \
+$(docker-machine ip redis-cluster-5):6379 \
+$(docker-machine ip redis-cluster-6):6379 \
+--cluster-replicas 1
+
 # Config AOF all
-echo "Benchmark with master and slave using AOF persistance config\n"
+echo "\nBenchmark with master and slave using AOF persistance config\n"
 ../../aof-all-config.sh
 
 echo "\nSetup for benchmark testing:\n2.6 GHz 6-Core Intel Core i7\n1024MB Ram\nLimit Disk IO Speed: 200MB/s\n"
