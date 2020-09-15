@@ -139,3 +139,9 @@ echo "Client:\nTotal number of request: 2000000\nKey space: 100000\nPineline: 16
 echo "Request type: GET, SET, LPUSH, LPOP\n"
 ./redis-benchmark -h $(docker-machine ip redis-cluster-1) -r 100000 -n 2000000 -t get,set,lpush,lpop -P 16 --cluster
 echo "\n---------------------------------------------\n"
+
+
+# Delete  all virtual machine
+for i in $(seq 1 6);\
+do docker-machine rm redis-cluster-$i -y;\
+done
